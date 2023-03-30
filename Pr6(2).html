@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rating Comment</title>
+  <script>
+    function changeBackground(color) {
+    document.body.style.background = color;
+  }
+
+    function openWindow() {
+      var num = prompt("Введите число (от 2 до 5):");
+      var comment = "";
+      var color = "";
+      var background = "";
+
+      switch(num) {
+        case "2":
+          comment = "Плохо";
+          color = "red";
+          background = "green";
+          break;
+        case "3":
+          comment = "Удовлетворительно";
+          color = "orange";
+          background = "blue";
+          break;
+        case "4":
+          comment = "Хорошо";
+          color = "green";
+          background = "black";
+          break;
+        case "5":
+          comment = "Отлично";
+          color = "purple";
+          background = "white";
+          break;
+        default:
+          comment = "Ошибка: введите число от 2 до 5";
+          color = "black";
+          background = "violet";
+          break;
+      }
+
+      var newWindow = window.open("", "", "width=200,height=200");
+      newWindow.document.write("<h3 style='color: " + color + ";'>" + comment + "</h3>");
+      newWindow.document.body.style.backgroundColor = background;
+      
+      
+      
+      
+    }
+
+
+    function closeWindow() {
+      if (confirm("Вы уверены, что хотите закрыть окно?")) {
+        window.close();
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="openWindow()">Start</button>
+  <button onclick="closeWindow()">Close</button>
+</body>
+</html>

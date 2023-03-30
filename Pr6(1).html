@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Пример скрипта на JavaScript</title>
+  <style>
+    /* Стили для заголовков h3 с оценками */
+    .bad {
+      color: red;
+    }
+    .saticfactory {
+      color: orange;
+    }
+    .good {
+      color: green;
+    }
+    .excellent {
+      color: purple;
+    }
+    /* Стили для заголовков h3 с ошибками */
+    .error {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Функция для вывода оценки или ошибки
+    function showRating(num) {
+      // Создаем заголовок h3
+      var heading = document.createElement("h3");
+      // Если число находится в диапазоне от 2 до 5
+      if (num>1 && num<6) {
+        // Определяем оценку по заданному числу
+        switch (num) {
+          case 2:
+            // Плохо
+            heading.className = "bad";
+            heading.textContent = "Плохо";
+            break;
+          case 3:
+            // Удовлетворительно
+            heading.className = "saticfactory";
+            heading.textContent = "Удовлетворительно";
+            break;
+          case 4:
+            // Хорошо
+            heading.className = "good";
+            heading.textContent = "Хорошо";
+            break;
+          case 5:
+            // Отлично
+            heading.className = "excellent";
+            heading.textContent = "Отлично";
+            break;
+        }
+      } else {
+        // Число не является допустимым 
+        heading.className = "error";
+        heading.textContent = "Ошибка: введите число от 2 до 5";
+      }
+      // Добавляем заголовок в текущий документ
+      document.body.appendChild(heading);
+    }
+
+    // Слушатель события для загрузки документа
+    document.addEventListener("DOMContentLoaded", function() {
+      // Запрашиваем у пользователя число
+      var num = prompt("Введите число:");
+      // Преобразуем строку в число
+      num = parseInt(num);
+      // Вызываем функцию для вывода оценки или ошибки
+      showRating(num);
+    });
+  </script>
+</body>
+</html>
