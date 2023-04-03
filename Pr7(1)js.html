@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ex1</title>
+  <style>
+    div {
+      width: 45px; 
+      height: 20px; 
+      border: 2px solid green
+    }
+  </style>
+  <script>
+    function styl(r1) {
+        r1.style.borderColor = 'red'
+    }
+    function styl1(r1) {
+        r1.style.borderColor = 'black'
+    }
+  </script>
+</head>
+<body>
+  <div id="p" onMouseOver="styl(this)" onMouseOut="styl1(this)">TEXT</div>
+</body>
+</html>

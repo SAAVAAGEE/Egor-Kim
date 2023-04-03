@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+</head>
+<body>
+    
+    <p class="r">Love</p>
+    <button id="btn">Some Text</button>
+    
+    <script>
+        function switchFontSize(cName,size1,size2,event){            
+            document.querySelectorAll(cName).forEach(item=>{                
+                if (item.style.fontSize==size1){
+                    item.style.fontSize=size2;   
+                    event.target.textContent=`Decrease`;
+                }
+                else {
+                    item.style.fontSize=size1;                
+                    event.target.textContent=`Increase`;                   
+                }            
+            });            
+        }
+        const myBtn=document.getElementById("btn");      
+        myBtn.addEventListener('click', (e)=>switchFontSize(".r","16pt","32pt",e)); 
+        myBtn.click();        
+    </script>
+</body>
+</html>
