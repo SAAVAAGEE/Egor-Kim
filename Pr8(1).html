@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button id="changeColorBtn">Изменить цвет</button>
+<h1>Заголовок 1</h1>
+<h1>Заголовок 2</h1>
+<h1>Заголовок 3</h1>
+<script>
+const changeColorBtn = document.getElementById("changeColorBtn");
+const h1Elements = document.querySelectorAll("h1");
+
+let isPink = true;
+
+changeColorBtn.addEventListener("click", () => {
+  h1Elements.forEach((h1) => {
+    if (isPink) {
+      h1.style.backgroundColor = "pink";
+    } else {
+      h1.style.backgroundColor = "turquoise";
+    }
+  });
+
+  if (isPink) {
+    changeColorBtn.textContent = "Изменить на бирюзовый";
+  } else {
+    changeColorBtn.textContent = "Изменить на розовый";
+  }
+
+  isPink = !isPink;
+});
+   </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>JavaScript Example</title>
+ <script type="text/javascript">
+  function addNumbers() {
+   var paragraphs = document.getElementsByTagName("p");
+   for (var i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontStyle = "italic";
+    paragraphs[i].innerHTML += " " + (i + 1) + ".";
+   }
+  }
+ </script>
+</head>
+<body>
+ <button onclick="addNumbers()">Add Numbers</button>
+ <p>Ïונגûי אבחאצ.</p>
+ <p>Âעמנמי אבחאצ.</p>
+ <p>Òנועטי אבחאצ.</p>
+</body>
+</html>
