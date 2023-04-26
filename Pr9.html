@@ -1,0 +1,35 @@
+html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Двухслойная картинка с анимацией</title>
+    <style>
+      #bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: -1;
+      }
+      #top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="bottom" src="bird.jpg">
+    <img id="top" src="ball.jpg">
+    <script>
+      var topImage = document.getElementById("top");
+      var currentPosition = 0;
+      setInterval(function() {
+        currentPosition -= 1;
+        topImage.style.left = currentPosition + "px";
+      }, 10);
+    </script>
+  </body>
+</html>
